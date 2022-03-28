@@ -66,3 +66,8 @@ model Location {
   longitude    Float
   bathroomCode String
 }
+
+model Flag {
+  key     String  @unique
+  enabled Boolean
+}

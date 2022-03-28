@@ -1,11 +1,38 @@
-import '../styles/globals.css';
+import 'styles/base/base.scss';
 import type { AppProps } from 'next/app';
 import { SessionProvider } from 'next-auth/react';
+import { SWRConfig } from 'swr';
+import { NextPage } from 'next';
+import { ReactElement, ReactNode } from 'react';
+import { DefaultLayout } from 'layouts/default/Default';
 
-const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
+type NextPageWithLayout = NextPage & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
+const App = ({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppPropsWithLayout) => {
+  const getLayout =
+    Component.getLayout ||
+    ((page: ReactNode) => <DefaultLayout>{page}</DefaultLayout>);
+
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      <SWRConfig
+        value={{
+          refreshInterval: 20000,
+          fetcher: (resource, init) =>
+            fetch(resource, init).then((res) => res.json()),
+        }}
+      >
+        {getLayout(<Component {...pageProps} />)}
+      </SWRConfig>
     </SessionProvider>
   );
 };

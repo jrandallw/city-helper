@@ -1,0 +1,32 @@
+@use 'sass:math';
+@import 'styles/config';
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: math.div($gutter, 2);
+
+  &__input {
+    all: unset;
+    background-color: $color-white;
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px black;
+
+    &:focus {
+      box-shadow: 0 0 0 2px $color-accent;
+    }
+  }
+
+  &__indicator {
+    color: $color-accent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

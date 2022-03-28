@@ -1,0 +1,183 @@
+@import 'styles/config', 'global', 'reset', 'fonts';
+
+/* stylelint-disable selector-max-type  */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+@viewport {
+  width: device-width;
+}
+
+::-moz-selection {
+  background: $color-accent;
+  color: $color-white;
+}
+
+::selection {
+  background: $color-accent;
+  color: $color-white;
+}
+
+:root {
+  @if global-variable-exists(scale) {
+    --scale-element: 1;
+    --scale-font: 1;
+
+    @each $size in $scale {
+      @media (max-height: nth($size, 1)) {
+        --scale-element: #{nth($size, 2)};
+        --scale-font: #{nth($size, 2)};
+      }
+    }
+  }
+}
+
+html,
+body {
+  min-height: 100vh;
+  background-color: $color-white;
+}
+
+html {
+  //scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  overflow-y: scroll; // always show the vertical scrollbar so that content doesn't jump
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100vw !important;
+  box-sizing: border-box;
+}
+
+// inherited from <html>
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  @include responsive-font($font-size-min, $font-size);
+  position: relative;
+  background-color: $color-primary;
+  margin: 0;
+  width: 100vw;
+  font-family: $font-family-copy;
+  line-height: $base-line-height;
+  font-weight: $book;
+  font-kerning: none;
+  text-size-adjust: 100%;
+  color: $color-secondary;
+  letter-spacing: 1px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// placeholders
+input,
+textarea,
+select {
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $color-white;
+  }
+
+  &::-moz-placeholder {
+    opacity: 1;
+    color: $color-white;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color-white;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $color-secondary;
+  transition: color $transitions;
+
+  &:hover {
+    color: $color-secondary;
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 12px 10px;
+  border-radius: $border-radius;
+  box-sizing: border-box;
+  border: 1px solid $color-white;
+
+  &:focus {
+    outline: none;
+    color: #000;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: $color-secondary;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: $font-family-heading;
+  @include rf(36, 42);
+}
+
+h2 {
+  font-family: $font-family-heading;
+  @include rf(34, 40);
+}
+
+h3 {
+  font-family: $font-family-heading;
+  @include rf(28, 34);
+}
+
+h4 {
+  font-family: $font-family-heading;
+  @include rf(22, 28);
+}
+
+h5 {
+  font-family: $font-family-heading;
+  @include rf(16, 22);
+}
+
+h6 {
+  font-family: $font-family-heading;
+  @include rf(10, 16);
+}
+
+b,
+strong {
+  font-weight: $bold;
+  color: $color-secondary;
+}
+
+p {
+  color: $color-secondary;
+  font-weight: $book;
+}
+
+i,
+em {
+  font-style: italic;
+}

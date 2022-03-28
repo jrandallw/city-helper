@@ -1,0 +1,46 @@
+@use "sass:math";
+
+%buttons {
+  @include rf(12, 14);
+  color: $color-white;
+  background: $color-accent;
+  padding: math.div($gutter, 2);
+  max-width: 225px;
+  min-width: 175px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  transition: all $transitions;
+  will-change: background-color;
+  display: block;
+  cursor: pointer;
+  border-radius: $border-radius;
+  user-select: none;
+  text-transform: uppercase;
+
+  &:hover {
+    background: $color-accent;
+    color: $color-white;
+  }
+}
+
+%slices {
+  padding: math.div($gutter, 2) 0;
+}
+
+%eyebrow {
+  text-transform: uppercase;
+  margin-bottom: 0;
+  color: $color-secondary;
+}
+
+%links {
+  text-decoration: underline;
+  text-decoration-color: $color-accent;
+
+  &:hover {
+    color: $color-white;
+  }
+}
