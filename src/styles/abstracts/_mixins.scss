@@ -4,6 +4,10 @@
   @include position-absolute(0, 0, 0, 0);
 }
 
+@mixin transition($property, $timing: 200ms, $easing: ease-in-out) {
+  transition: $property $timing $easing;
+}
+
 @mixin push-auto {
   margin-left: auto;
   margin-right: auto;
