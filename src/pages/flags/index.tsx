@@ -1,8 +1,8 @@
+import type { NextPage } from 'next';
+import useSWR from 'swr';
+
 import { Head } from 'components/head/Head';
 import { Checkbox } from 'elements/checkbox/Checkbox';
-import type { NextPage } from 'next';
-
-import useSWR from 'swr';
 import { capitalizeText } from 'utils/capitalize/capitalizeText';
 
 const Flags: NextPage = () => {

@@ -1,5 +1,5 @@
 // Gutters
-@use "sass:math";
+@use 'sass:math';
 
 $gutter: 30px;
 $container-gutter-mobile: $gutter;
@@ -17,8 +17,9 @@ $page-limit: $page-width + ($container-gutter-desktop * 2);
 $copy-width: 650px;
 
 // Font Families
-$font-family-heading: 'HamburgHand', sans-serif;
-$font-family-copy: forma-djr-display, sans-serif;
+$font-family-heading: 'Red Hat Display', sans-serif;
+$font-family-monospacce: 'Cutive Mono', monospace;
+$font-family-copy: 'Red Hat Display', sans-serif;
 
 // Font Styles
 $font-size: 14px;

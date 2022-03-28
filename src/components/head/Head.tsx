@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { config } from 'lib/site.config';
 import NextHead from 'next/head';
 import { useRouter } from 'next/router';
+
+import { config } from 'lib/site.config';
 
 interface SEOProps {
   title: string;

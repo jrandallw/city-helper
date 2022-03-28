@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+
 import { prisma } from 'lib/prisma';
 
 const flags = async (req: NextApiRequest, res: NextApiResponse) => {

@@ -1,9 +1,11 @@
 import 'styles/base/base.scss';
-import type { AppProps } from 'next/app';
-import { SessionProvider } from 'next-auth/react';
-import { SWRConfig } from 'swr';
-import { NextPage } from 'next';
 import { ReactElement, ReactNode } from 'react';
+
+import { NextPage } from 'next';
+import { SessionProvider } from 'next-auth/react';
+import type { AppProps } from 'next/app';
+import { SWRConfig } from 'swr';
+
 import { DefaultLayout } from 'layouts/default/Default';
 
 type NextPageWithLayout = NextPage & {

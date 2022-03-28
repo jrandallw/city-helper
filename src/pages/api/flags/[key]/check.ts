@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+
 import { prisma } from 'lib/prisma';
-import Flags from 'pages/flags';
 
 const check = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== 'GET') {

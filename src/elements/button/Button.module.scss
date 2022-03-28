@@ -1,0 +1,11 @@
+@use 'sass:math';
+@use 'sass:color';
+@import 'styles/config';
+
+.button {
+  @extend %button;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}

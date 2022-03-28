@@ -1,8 +1,8 @@
-import { Head } from 'components/head/Head';
-import { Map } from 'components/map/Map';
-import { Container } from 'containers/container/Container';
 import type { NextPage } from 'next';
 import useSWR from 'swr';
+
+import { Head } from 'components/head/Head';
+import { Map } from 'components/map/Map';
 
 const Index: NextPage = () => {
   const { data, error } = useSWR('/api/locations');
@@ -13,7 +13,7 @@ const Index: NextPage = () => {
   return (
     <>
       <Head title="Index" />
-      <Container>{JSON.stringify(data, null, 4)}</Container>
+
       <Map />
     </>
   );

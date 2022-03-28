@@ -1,9 +1,4 @@
 @import 'styles/config';
 
-// typekit
-@import url('https://use.typekit.net/pil6yht.css');
-
-// custom local fonts
-@include font-face(HamburgHand, HamburgHandLight, $book);
-@include font-face(HamburgHand, HamburgHandRegular, $normal);
-@include font-face(HamburgHand, HamburgHandBold, $bold);
+// google
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Red+Hat+Display:wght@300;400&display=swap');
