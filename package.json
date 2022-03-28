@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build",
     "dev-connect": "pscale connect city-helper development --port 3309"
   },
   "dependencies": {
