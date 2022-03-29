@@ -8,7 +8,7 @@ import s from './Button.module.scss';
 
 export interface ButtonProps {
   children: ReactNode;
-  href?: any;
+  href?: string;
   as?: string;
   type?: 'submit' | 'button' | 'reset';
   disabled?: boolean;

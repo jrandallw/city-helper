@@ -1,13 +1,14 @@
 import { ReactNode } from 'react';
 
+import css from 'classnames';
+
+import s from './Grid.module.scss';
+
 interface GridProps {
   children: ReactNode;
+  contain?: boolean;
 }
 
-export const Grid = ({ children }: GridProps) => {
-  return (
-    <div className="grid grid-cols-12 container mx-auto px-4 max-w-lg">
-      {children}
-    </div>
-  );
+export const Grid = ({ children, contain }: GridProps) => {
+  return <div className={css(s.grid, contain && s.contain)}>{children}</div>;
 };

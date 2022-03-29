@@ -1,0 +1,11 @@
+@use 'sass:math';
+@import 'styles/config';
+
+.search {
+  &__input {
+    width: 100%;
+    border-radius: $border-radius;
+    padding: math.div($gutter, 2);
+    color: $color-primary;
+  }
+}

@@ -1,0 +1,13 @@
+@import 'styles/config';
+
+.sidebar {
+  width: 100%;
+  padding: $gutter;
+  background-color: $color-primary;
+  color: $color-white;
+  grid-column: span 12;
+
+  @media (min-width: $min-desktop) {
+    grid-column: span 3;
+  }
+}

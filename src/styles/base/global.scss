@@ -1,0 +1,11 @@
+@import 'styles/config';
+
+[data-reach-combobox-input] {
+  &::placeholder {
+    color: $color-primary;
+  }
+}
+
+[data-reach-combobox-option] {
+  color: $color-primary;
+}

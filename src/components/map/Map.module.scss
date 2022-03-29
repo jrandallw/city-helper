@@ -1,25 +1,9 @@
 @import 'styles/config';
 
 .map {
-  display: flex;
+  flex-grow: 1;
   height: 100vh;
-  flex-direction: column;
-
-  &__controls {
-    width: 100%;
-    padding: $gutter;
-    background-color: black;
-    color: $color-white;
-
-    @media (min-width: $min-desktop) {
-      width: 20%;
-    }
-  }
-
-  &__map {
-    flex-grow: 1;
-    height: 100vh;
-  }
+  grid-column: span 12;
 
   &__container {
     width: 100%;
@@ -28,5 +12,6 @@
 
   @media (min-width: $min-desktop) {
     flex-direction: row;
+    grid-column: span 9;
   }
 }
