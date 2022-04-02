@@ -16,11 +16,17 @@ const auth = async (req: NextApiRequest, res: NextApiResponse) =>
     ],
     pages: {
       signIn: '/login',
+      newUser: '/welcome',
     },
-    debug: process.env.NODE_ENV === 'development',
     secret: process.env.AUTH_SECRET,
-    jwt: {
-      secret: process.env.JWT_SECRET,
+    debug: process.env.NODE_ENV === 'development',
+    callbacks: {
+      session: async ({ session, user }) => {
+        return Promise.resolve({
+          ...session,
+          user: { ...session.user, id: user.id },
+        });
+      },
     },
   });
 

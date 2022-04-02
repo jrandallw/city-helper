@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 
+import { Header } from 'components/header/Header';
+
 import s from './Default.module.scss';
 
 interface LayoutProps {
@@ -7,5 +9,10 @@ interface LayoutProps {
 }
 
 export const DefaultLayout = ({ children }: LayoutProps) => {
-  return <main className={s.layout}>{children}</main>;
+  return (
+    <main className={s.layout}>
+      <Header />
+      {children}
+    </main>
+  );
 };

@@ -1,7 +1,6 @@
 import { ReactElement } from 'react';
 
 import { useLoadScript } from '@react-google-maps/api';
-import type { NextPage } from 'next';
 import useSWR from 'swr';
 
 import { Head } from 'components/head/Head';
@@ -10,6 +9,7 @@ import { Sidebar } from 'components/sidebar/Sidebar';
 import { Grid } from 'containers/grid/Grid';
 import { LocationsContextProvider } from 'contexts/locations/LocationsContext';
 import { DefaultLayout } from 'layouts/default/Default';
+import { BasePage } from 'types/generic';
 
 const Index = () => {
   const { isLoaded } = useLoadScript({
@@ -23,7 +23,7 @@ const Index = () => {
 
   return (
     <>
-      <Head title="Index" />
+      <Head title="Home" />
       <Grid>
         <Sidebar />
         <Map />

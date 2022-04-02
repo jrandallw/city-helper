@@ -28,6 +28,13 @@ model Account {
   @@unique([provider, providerAccountId])
 }
 
+model Profile {
+  id     String  @id @default(cuid())
+  userId String
+  bio    String?
+  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
 model Session {
   id           String   @id @default(cuid())
   sessionToken String   @unique
@@ -44,6 +51,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  profile       Profile[]
 }
 
 model VerificationToken {

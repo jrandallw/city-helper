@@ -1,0 +1,12 @@
+@use 'sass:math';
+@import 'styles/config';
+
+.userActions {
+  display: flex;
+  align-items: center;
+  gap: math.div($gutter, 2);
+
+  &__trigger {
+    background-color: transparent;
+  }
+}

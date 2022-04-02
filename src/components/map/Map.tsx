@@ -1,14 +1,11 @@
-import { useState, useMemo, useCallback, useRef, useEffect } from 'react';
+import { useMemo, useCallback, useRef, useEffect } from 'react';
 
 import { Location } from '@prisma/client';
 import { GoogleMap, Marker, InfoWindow } from '@react-google-maps/api';
-import { useLoadScript } from '@react-google-maps/api';
 import useSWR from 'swr';
 
-import { Search } from 'components/search/Search';
 import { ACTIONS } from 'contexts/locations/actions';
 import { useLocationsStore } from 'contexts/locations/LocationsContext';
-import { Heading } from 'elements/heading/Heading';
 
 import s from './Map.module.scss';
 
